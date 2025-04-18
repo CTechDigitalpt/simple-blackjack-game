@@ -417,5 +417,41 @@ document.addEventListener("DOMContentLoaded", function () {
             resetGame(); 
         }
     });
+});
 
+window.addEventListener('load', function() {
+    console.log("Adding donation button effects");
+    const donationButtons = document.querySelectorAll('#donate-btn-patreon, #donate-btn-paypal, #donate-btn-kofi');
+    
+    console.log("Found donation buttons:", donationButtons.length);
+    
+    setTimeout(() => {
+        donationButtons.forEach(button => {
+            button.classList.add('btn-flash');
+            setTimeout(() => button.classList.remove('btn-flash'), 2000);
+        });
+    }, 3000);
+    
+    donationButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            console.log("Mouse entered donation button");
+            this.classList.add('btn-flash');
+            this.style.transition = "transform 0.2s";
+            this.style.transform = "translateY(-3px)";
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            console.log("Mouse left donation button");
+            this.classList.remove('btn-flash');
+            this.style.transform = "translateY(0)";
+        });
+        
+        button.addEventListener('mousedown', function() {
+            this.style.transform = "translateY(2px)";
+        });
+        
+        button.addEventListener('mouseup', function() {
+            this.style.transform = "translateY(-3px)";
+        });
+    });
 });
