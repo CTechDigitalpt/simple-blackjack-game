@@ -30,14 +30,8 @@ This game does not include betting or mention of money of any kind. It is purely
 
 ## Acknowledgments
 This project is free to use and modify. Please provide recognition to the original developer when sharing or modifying the code.
-
-### Examples of Recognition
-- Include a comment in the code:  
+ 
   `/* Original Developer: CTechDigital.com */`
-- Mention in documentation or README:  
-  `This project is based on the original work by CTechDigital.com`
-- Add a credit section in your website or application:  
-  `Credits: Blackjack Game by CTechDigital.com.`
 
 ## Contributing
 
