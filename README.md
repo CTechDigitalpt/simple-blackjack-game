@@ -12,6 +12,8 @@ This is a web-based implementation of the classic Blackjack card game. The game 
   - `S`: Stand
   - `D`: Deal
 
+![Blackjack Game Screenshot](static/images/blackjack-screenshot.png "Blackjack Game")
+
 ## How to Run
 1. Clone or download the repository to your local machine.
 2. Open the `blackjack.html` file in any modern web browser.
