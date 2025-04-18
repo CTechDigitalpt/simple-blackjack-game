@@ -49,6 +49,8 @@ If you enjoy this game and would like to support its continued development, plea
 
 [Donate via Patreon](https://www.patreon.com/ctechdigital)
 
+[Donate via Ko-Fi](https://ko-fi.com/ctechdigitalcom)
+
 Your support helps maintain and improve this project and others. Thank you!
 
 ## License
