@@ -12,7 +12,7 @@ This is a web-based implementation of the classic Blackjack card game. The game 
   - `S`: Stand
   - `D`: Deal
 
-![Blackjack Game Screenshot](assets/images/blackjack-screenshot2.PNG "Blackjack Game")
+![Blackjack Game Screenshot](assets/images/blackjack-screenshot-02.PNG "Blackjack Game")
 
 ## How to Run
 1. Clone or download the repository to your local machine.
