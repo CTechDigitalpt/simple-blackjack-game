@@ -1,0 +1,107 @@
+<!--
+    This file is part of the Blackjack Game project.
+
+    License: This code is free to use and modify, but you must provide recognition to the original developer.
+    Author: [Your Name or Original Developer's Name]
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="assets/images/icon/favicon.png" type="image/png">
+</head>
+
+<body>
+    <button id="toggle-sidebar-btn">Hide Sidebar</button>
+    <div id="sidebar">
+        <img src="assets/images/logo/ctechdigital.png" alt="CTechDigital.com" class="sidebar-logo">
+        <p class="sidebar-created-by">Created by</p>
+        <a href="https://www.ctechdigital.com" target="_blank" class="sidebar-url">CTech Digital.com</a>
+        <div class="social-icons">
+            <a href="https://github.com/CTechDigitalpt" target="_blank" class="social-link">
+                <img src="assets/images/social/light/github.svg" alt="GitHub" class="social-icon">
+            </a>
+            <a href="https://x.com/CTechDigital" target="_blank" class="social-link">
+                <img src="assets/images/social/light/twitter-x.svg" alt="Twitter" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/ctechdigitalcom/" target="_blank" class="social-link">
+                <img src="assets/images/social/light/instagram.svg" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://tiktok.com/@ctechdigital.com" target="_blank" class="social-link">
+                <img src="assets/images/social/light/tiktok.svg" alt="TikTok" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/company/ctech-digital/" target="_blank" class="social-link">
+                <img src="assets/images/social/light/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@CTech_Digital" target="_blank" class="social-link">
+                <img src="assets/images/social/light/youtube.svg" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+        <p class="sidebar-description">A Simple Fun BlackJack Game</p>
+        <p class="sidebar-help-notice">Best Played in Full Screen (F11)</p>
+        <div class="donate-buttons">
+            <button id="donate-btn-patreon" onclick="window.open('https://www.patreon.com/ctechdigital', '_blank')">Donate at Patreon</button>
+            <button id="donate-btn-paypal" onclick="window.open('https://www.paypal.com/donate/?hosted_button_id=8NZMBAKJTVHPY', '_blank')">Donate at PayPal</button>
+        </div>
+    </div>
+    <div id="game-container">
+        <div id="dealer">
+            <h2>Dealer</h2>
+            <div id="dealer-cards">
+               
+            </div>
+            <div id="dealer-score">Score: 0</div>
+        </div>
+        <div id="player-container">
+            <div id="player">
+                <h2>Player</h2>
+                <div id="player-cards">
+                 
+                </div>
+                <div id="player-score">Score: 0</div>
+                <div class="buttons">
+                    <button id="hit-button-player">Hit</button>
+                    <button id="stand-button-player">Stand</button>
+                </div>
+            </div>
+            <div id="split-hand" class="hidden">
+                <h2>Split Hand</h2>
+                <div id="split-cards">
+
+                </div>
+                <div id="split-score">Score: 0</div>
+                <div class="buttons">
+                    <button id="hit-button-split">Hit</button>
+                    <button id="stand-button-split">Stand</button>
+                </div>
+            </div>
+        </div>
+        <div id="buttons-container">
+            <div class="buttons">
+                <button id="deal-button">Deal</button>
+                <button id="split-button" disabled>Split</button>
+            </div>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <div id="blackjack-overlay" class="hidden">
+        <div id="blackjack-popup">
+            <img src="assets/images/congrats/blackjack-notice.webp" alt="Blackjack!" id="blackjack-image">
+        </div>
+    </div>
+    <script src="static/js/main.js"></script>
+    <script>
+        // Add functionality to toggle the sidebar visibility
+        document.getElementById('toggle-sidebar-btn').addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
