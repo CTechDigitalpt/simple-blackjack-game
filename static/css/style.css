@@ -1,0 +1,457 @@
+/*
+ * This file is part of the Blackjack Game project.
+ * 
+ * License: This code is free to use and modify, but you must provide recognition to the original developer.
+ * Author: CTechDigital.com
+ */
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 270px; 
+    padding: 5px;
+    transition: margin-left 0.3s ease;
+    position: relative; 
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1px 0;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#dealer-score {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#dealer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#player-score {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#player-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+#player-container.split-active {
+    justify-content: space-between;
+}
+
+#player, #split-hand, #dealer {
+    min-width: 40%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: min-width 0.3s ease;
+    overflow: visible;
+    max-width: 100%;   
+}
+
+#split-hand.hidden {
+    display: none;
+}
+
+#split-score {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#player-cards, #split-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-height: 210px;
+    padding-bottom: 5px;
+    width: 100%;
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #f1f1f1; 
+}
+#dealer-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-height: 180px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 30vh;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1; 
+}
+#player-cards::-webkit-scrollbar,
+#split-cards::-webkit-scrollbar,
+#dealer-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+#player-cards::-webkit-scrollbar-track,
+#split-cards::-webkit-scrollbar-track,
+#dealer-cards::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#player-cards::-webkit-scrollbar-thumb,
+#split-cards::-webkit-scrollbar-thumb,
+#dealer-cards::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#player-cards::-webkit-scrollbar-thumb:hover,
+#split-cards::-webkit-scrollbar-thumb:hover,
+#dealer-cards::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#player-cards img, #split-cards img, #dealer-cards img {
+    flex: 0 0 auto;
+    margin-right: 5px;
+    width: 110px;
+    height: 200px;
+    border: 1px solid #000;
+}
+
+#buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#buttons-container .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#buttons-container .buttons button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#buttons-container .buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #cccccc;
+}
+
+#buttons {
+    margin-top: 0px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    border-radius: 5px;;
+    min-width: 230px;
+
+}
+
+#buttons button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #cccccc;
+}
+
+#split-button {
+    background-color: #ffcc00;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#split-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: larger;
+    padding-bottom: 50%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../background/background-image.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(222, 218, 218, 0.582);
+    z-index: -1;
+}
+
+
+#blackjack-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#blackjack-popup {
+    text-align: center;
+    background-color: transparent;
+    padding: 10%;
+    pointer-events: none;
+    max-width: 50%;
+}
+
+#blackjack-popup img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#blackjack-popup button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: gold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#blackjack-popup button:hover {
+    background-color: darkgoldenrod;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* sidebar styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    padding: 15% 20px 20px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    text-align: center;
+    color: white;
+    transition: width 0.3s ease;
+}
+
+.sidebar-logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+}
+
+.sidebar-created-by {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.sidebar-url {
+    font-size: 14px;
+    color: #4CAF50;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.sidebar-url:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    height: 24px;
+    width: auto;
+}
+
+.sidebar-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.donate-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#donate-btn-patreon, #donate-btn-paypal {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#donate-btn-patreon:hover {
+    background-color: #0a8a0e;
+}
+
+#donate-btn-paypal {
+    background-color: #0544b5;
+}
+
+#donate-btn-paypal:hover {
+    background-color: #0543b583;
+}
+
+/* Toggle Sidebar Button */
+#toggle-sidebar-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#toggle-sidebar-btn:hover {
+    background-color: #0a8a0e;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px; 
+    }
+
+    #game-container {
+        margin-left: 210px; 
+    }
+
+    .social-icons {
+        flex-wrap: wrap; 
+        gap: 5px;
+    }
+
+    .donate-buttons {
+        flex-wrap: wrap; 
+        gap: 5px;
+    }
+
+    #donate-btn-patreon, #donate-btn-paypal {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        width: 150px; 
+        padding: 15px;
+    }
+
+    #game-container {
+        margin-left: 160px; 
+    }
+
+    .sidebar-logo {
+        margin-bottom: 10px;
+    }
+
+    .sidebar-description {
+        font-size: 12px;
+    }
+
+    .social-icons {
+        gap: 3px;
+    }
+
+    #donate-btn-patreon, #donate-btn-paypal {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+}
