@@ -2,7 +2,7 @@
  * This file is part of the Blackjack Game project.
  * 
  * License: This code is free to use and modify, but you must provide recognition to the original developer.
- * Author: [Your Name or Original Developer's Name]
+ * Author: CTechDigital.com 
  */
 
 document.addEventListener("DOMContentLoaded", function () {
