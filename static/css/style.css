@@ -358,16 +358,24 @@ body::after {
     gap: 10px;
 }
 
-#donate-btn-patreon, #donate-btn-paypal {
+#donate-btn-patreon, 
+#donate-btn-paypal, 
+#donate-btn-kofi {
+    --border-width: 1px;
+    --border-cut: 12px;
+    --button-shape: polygon(var(--border-cut) 0, 100% 0, 100% calc(100% - var(--border-cut)), calc(100% - var(--border-cut)) 100%, 0 100%, 0 var(--border-cut));
     background-color: #4CAF50;
     color: white;
-    border: none;
+    border: var(--border-width) solid rgb(66, 64, 64);
     padding: 8px 12px;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
+    clip-path: var(--button-shape);
+    -webkit-clip-path: var(--button-shape);
 }
+
 
 #donate-btn-patreon:hover {
     background-color: #0a8a0e;
@@ -379,6 +387,14 @@ body::after {
 
 #donate-btn-paypal:hover {
     background-color: #0543b583;
+}
+
+#donate-btn-kofi {
+    background-color: #ac8507;
+}
+
+#donate-btn-kofi:hover {
+    background-color: #ac8607cc;
 }
 
 /* Toggle Sidebar Button */
